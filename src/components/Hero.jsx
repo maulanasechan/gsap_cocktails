@@ -50,7 +50,8 @@ const Hero = () => {
       scrollTrigger: {
         trigger: "video",
         start: startVideo,
-        end: endVideo,
+        endTrigger: "#cocktails",
+        end: "bottom bottom",
         scrub: true,
         pin: true,
       },

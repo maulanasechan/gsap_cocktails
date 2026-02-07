@@ -45,9 +45,9 @@ body {
 
 @utility radial-gradient {
   background: radial-gradient(
-    circle at center,
+    circle at center 20%,
     #434343 0%,
-    #000 50%,
+    #000 25%,
     transparent 100%
   );
 }
@@ -56,7 +56,30 @@ body {
   mask-image: url("/images/mask-img.png");
   mask-repeat: no-repeat;
   mask-position: center;
-  mask-size: 50%;
+  mask-size: 65%;
+}
+
+@media (min-width: 420px) {
+  .masked-img {
+    mask-size: 30%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .masked-img {
+    mask-size: 50%;
+  }
+}
+
+@media (min-width: 768px) {
+  .radial-gradient {
+    background: radial-gradient(
+      circle at center 300px,
+      #434343 0%,
+      #000 20%,
+      transparent 100%
+    );
+  }
 }
 
 @layer components {
@@ -241,34 +264,36 @@ body {
   }
 
   #art {
-    @apply flex-center flex-col min-h-dvh p-5 mt-20 relative radial-gradient;
+    @apply flex-center flex-col min-h-dvh p-5 md:mt-0 lg:mt-20 mt-20 relative;
 
     h2 {
       @apply relative md:text-[20vw] text-8xl text-nowrap leading-none font-modern-negra text-center text-[#505050] mb-8;
     }
 
     .content {
-      @apply flex md:flex-row flex-col justify-between md:mb-16 md:mt-0 mt-40 gap-10;
+      @apply flex md:flex-row flex-col justify-between mb-8 md:mt-20 mt-10 gap-10;
     }
 
     .cocktail-img {
-      @apply md:w-[60vw] w-full h-[50vh] md:h-[70vh] rounded-4xl overflow-hidden absolute top-0 md:top-1/2 md:-translate-y-1/2 left-1/2 -translate-x-1/2;
+      @apply lg:w-[50vw] w-full h-[40vh] lg:h-[60vh] rounded-4xl overflow-hidden absolute top-0 md:top-1/2 md:-translate-y-1/2 left-1/2 -translate-x-1/2;
     }
 
     .masked-container {
+      @apply md:mt-40 mt-52;
+
       h2 {
-        @apply text-4xl md:text-5xl font-modern-negra text-center mb-10 text-white mt-32;
+        @apply text-4xl font-modern-negra text-center mb-10 text-white;
       }
 
       div {
-        @apply opacity-0 md:px-0 px-5 space-y-5 absolute md:bottom-5 bottom-52 left-1/2 -translate-x-1/2;
+        @apply opacity-0  space-y-2;
 
         h3 {
-          @apply md:text-5xl text-2xl text-center font-serif md:w-full w-80 text-white;
+          @apply md:text-3xl sm:text-3xl text-lg text-center font-serif w-full text-white;
         }
 
         p {
-          @apply text-lg text-center;
+          @apply text-sm text-center;
         }
       }
     }
