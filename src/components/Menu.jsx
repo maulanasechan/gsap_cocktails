@@ -2,6 +2,7 @@ import { useRef, useState } from "react";
 import { sliderLists } from "../../constants";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
+import { asset } from "../utils/assets";
 
 const Menu = () => {
   const contentRef = useRef();
@@ -49,12 +50,12 @@ const Menu = () => {
       className="menu-radial-gradient"
     >
       <img
-        src="/images/slider-left-leaf.png"
+        src={asset("images/slider-left-leaf.png")}
         alt="left-leaf"
         id="m-left-leaf"
       />
       <img
-        src="/images/slider-right-leaf.png"
+        src={asset("images/slider-right-leaf.png")}
         alt="right-leaf"
         id="m-right-leaf"
       />
@@ -84,7 +85,7 @@ const Menu = () => {
           >
             <span>{prevCocktail.name}</span>
             <img
-              src="/images/left-arrow.png"
+              src={asset("images/left-arrow.png")}
               alt="left-arrow"
               aria-hidden="true"
             />
@@ -95,7 +96,7 @@ const Menu = () => {
           >
             <span>{nextCocktail.name}</span>
             <img
-              src="/images/right-arrow.png"
+              src={asset("images/right-arrow.png")}
               alt="right-arrow"
               aria-hidden="true"
             />
